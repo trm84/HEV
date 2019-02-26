@@ -31,4 +31,7 @@ beta = atan(dfx) %beta equals arctangent of dfx
 percent_grade = tan(beta)*100
 
 %vi
-Tx = 15863.3 %Take integral of (1 + dfx^2)^0.2 from 0 to 15840
+syms x
+T = abs(sqrt(1 + (2.05/sqrt(x))^2)); %absolute value of (1 + dfx^2)^0.5
+M = int(T,[0 3*mile]); % integral of above function from 0 to 15840
+Tx = double(M(1)) %Tangential Road Length
